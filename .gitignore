@@ -1,3 +1,5 @@
 venv
-Procfile
 setup.sh
+similarity.pkl
+movies_dict.pkl
+Procfile

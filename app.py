@@ -4,6 +4,21 @@ import pandas as pd
 import requests
 
 st.set_page_config(page_title='Movie Recommender', page_icon='random')
+# hide_st_style = """
+#             <style>
+#             #MainMenu {visibility: hidden;}
+#             footer {visibility: visible;}
+#             footer:after{
+#             content : "Made by Avishkar © 2023";
+#             width:100%;
+#             left:60%;
+#             position:relative;
+#             color :tomato;
+#             }
+#             header {visibility: hidden;}
+#             </style>
+#             """
+# st.markdown(hide_st_style, unsafe_allow_html=True)
 
 movies_dict = pickle.load(open('movies_dict.pkl','rb'))
 movies = pd.DataFrame(movies_dict)
@@ -33,6 +48,7 @@ def recommend(movie):
     return [recommended_movies,recommended_movies_poster]
 
 
+st.markdown("<p style='text-align: end; color: tomato;'>Made by Avishkar © 2023 </p>", unsafe_allow_html=True)
 
 st.title('Movie Recommender system')
 
@@ -61,3 +77,4 @@ if st.button('Recommend'):
     with col5:
         st.text(names[4])
         st.image(posters[4])
+
